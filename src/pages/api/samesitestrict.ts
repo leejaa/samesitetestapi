@@ -6,16 +6,18 @@ type Data = {
   name: string
 }
 
-export default function handler(
+export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-    // const response = NextResponse.next()
-    // response.cookies.set({
+    // res.setHeader('Set-Cookie', `token=asdfasdf; path=/; SameSite=None;`)
+    const response = NextResponse.next()
+    // await response.cookies.set({
     //     name: 'token',
     //     value: 'asdfasdf',
-    //     sameSite: 'none'
+    //     sameSite: 'lax'
     // })
-    res.setHeader('Set-Cookie', 'token=asdfasdf; HttpOnly; Path=/; Expires=Max-Age=86400; Wed, 21 Oct 2025 07:28:00 GMT')
+    
+    res.setHeader('Set-Cookie', 'token=asdfasdf; SameSite=Strict; HttpOnly; Path=/; Max-Age=86400; Expires=Wed, 21 Oct 2025 07:28:00 GMT')
   res.status(200).json({ name: 'John Doe' })
 }
