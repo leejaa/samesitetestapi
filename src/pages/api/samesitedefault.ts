@@ -16,6 +16,6 @@ export default function handler(
     //     value: 'asdfasdf',
     //     sameSite: 'none'
     // })
-    res.setHeader('Set-Cookie', 'token=asdfasdf; HttpOnly; Path=/')
+    res.setHeader('Set-Cookie', 'token=asdfasdf; HttpOnly; Path=/; Max-Age=86400')
   res.status(200).json({ name: 'John Doe' })
 }
