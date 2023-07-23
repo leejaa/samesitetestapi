@@ -18,6 +18,6 @@ export default async function handler(
     //     sameSite: 'lax'
     // })
     
-    res.setHeader('Set-Cookie', 'token=asdfasdf; SameSite=Lax; HttpOnly; Path=/; Max-Age=86400; Expires=Wed, 21 Oct 2025 07:28:00 GMT; Domain=samesitetestclient.vercel.app; Secure')
+    res.setHeader('Set-Cookie', 'token=asdfasdf; SameSite=Lax; HttpOnly; Path=/; Max-Age=86400; Expires=Wed, 21 Oct 2025 07:28:00 GMT')
   res.status(200).json({ name: 'John Doe' })
 }
