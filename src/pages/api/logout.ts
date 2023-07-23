@@ -13,6 +13,6 @@ export default function handler(
     // const response = NextResponse.next()
     // response.cookies.delete('token')
     
-    res.setHeader('Set-Cookie', `token=; max-age=-1`)
+    res.setHeader('Set-Cookie', `token=; max-age=-1; SameSite=None; HttpOnly; Path=/;`)
   res.status(200).json({ name: 'John Doe' })
 }
