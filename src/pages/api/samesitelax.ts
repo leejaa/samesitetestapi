@@ -18,6 +18,6 @@ export default async function handler(
     //     sameSite: 'lax'
     // })
     
-    res.setHeader('Set-Cookie', 'token=asdfasdf; SameSite=Lax')
+    res.setHeader('Set-Cookie', 'token=asdfasdf; SameSite=Lax; Secure')
   res.status(200).json({ name: 'John Doe' })
 }
